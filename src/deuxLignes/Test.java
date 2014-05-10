@@ -17,7 +17,7 @@ public class Test {
 				e.getMessage();
 			}
 			
-        	Controller Controller = new Controller(modele, fenetre);
+        	
         	
         	fenetre.pack(); // Recalcule la taille des composants
     		fenetre.setVisible(true); //Fenetre visible
@@ -32,8 +32,10 @@ public class Test {
 			} catch (IntegerOutOfRangeException e) {
 				e.getMessage();
 			}
+			SuperIntegerObserver Su = new SuperIntegerObserver(modele, modele2, fenetre, fenetre2);
 			
-        	Controller Controller2 = new Controller(modele2, fenetre2);
+			Controller Controller = new Controller(modele, fenetre, Su);
+        	Controller Controller2 = new Controller(modele2, fenetre2, Su);
         	
         	fenetre2.pack(); // Recalcule la taille des composants
     		fenetre2.setVisible(true); //Fenetre visible

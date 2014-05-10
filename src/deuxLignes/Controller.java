@@ -8,10 +8,12 @@ public class Controller {
 	
 	private Fenetre Fenetre;
 	private Modele Modele;
-	public Controller(Modele Modele, Fenetre Fenetre) {
+	private SuperIntegerObserver Su;
+	public Controller(Modele Modele, Fenetre Fenetre, SuperIntegerObserver Su) {
 		
 		this.Fenetre = Fenetre;
 		this.Modele = Modele;
+		this.Su = Su;
 		
 		ActionPlus = new ActionPlus(Modele);
 		ActionMoins = new ActionMoins(Modele);
@@ -25,6 +27,7 @@ public class Controller {
 		Fenetre.getText().addActionListener(ActionTextField);
 		
 		this.Modele.addObserver(new IntegerObserver(Fenetre));
+		this.Modele.addObserver(Su);
 	}
 	
 	

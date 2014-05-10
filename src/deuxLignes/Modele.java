@@ -10,6 +10,7 @@ public class Modele extends Observable{
 
 	private int entier;
 
+
 		
 	/**
 	 * Constructeur avec paramètre. Jette une exception IntegerOutOfRangeException si l'entier donné est inférieur à 0 o supérieur à 10
@@ -26,6 +27,7 @@ public class Modele extends Observable{
 		else
 		{
 			this.entier = entier;
+			
 		}
 	}
 
@@ -48,6 +50,7 @@ public class Modele extends Observable{
 			this.entier = entier;
 			setChanged();
 			notifyObservers();
+			
 		}
 	}
 	
@@ -61,6 +64,7 @@ public class Modele extends Observable{
 			entier++;
 			setChanged();
 			notifyObservers();
+			
 		}
 	}
 	
@@ -74,6 +78,7 @@ public class Modele extends Observable{
 			entier--;
 			setChanged();
 			notifyObservers();
+			
 		}
 	}
 	
@@ -83,13 +88,16 @@ public class Modele extends Observable{
 		{
 			setChanged();
 			notifyObservers();
-			throw new IntegerOutOfRangeException();			
+			
+			throw new IntegerOutOfRangeException();		
+			
 		}
 		else
 		{
 			this.entier = tmp;
 			setChanged();
 			notifyObservers();
+			
 		}
 		
 	}
